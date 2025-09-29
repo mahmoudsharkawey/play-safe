@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "homeTeam": "Riyadh Falcons",
+    "awayTeam": "Jeddah Waves",
+    "date": "2025-10-05T18:30:00Z",
+    "stadium": "Riyadh Arena",
+    "expectedWeather": "Heavy rain likely"
+  },
+  {
+    "id": 2,
+    "homeTeam": "Mecca Lions",
+    "awayTeam": "Dammam Sharks",
+    "date": "2025-10-07T17:00:00Z",
+    "stadium": "Mecca Stadium",
+    "expectedWeather": "Hot and dry"
+  },
+  {
+    "id": 3,
+    "homeTeam": "Taif Eagles",
+    "awayTeam": "Medina Stars",
+    "date": "2025-10-12T20:00:00Z",
+    "stadium": "Taif Sports City",
+    "expectedWeather": "Breezy with clouds"
+  }
+]
+
+

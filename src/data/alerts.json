@@ -1,0 +1,28 @@
+[
+  {
+    "id": "a1",
+    "title": "Storm warning in Riyadh Arena",
+    "severity": "high",
+    "description": "80% chance of heavy rain during evening hours.",
+    "location": "Riyadh Arena",
+    "time": "2025-10-05T16:00:00Z"
+  },
+  {
+    "id": "a2",
+    "title": "High temperature advisory",
+    "severity": "medium",
+    "description": "Daytime highs above 41°C expected.",
+    "location": "Mecca",
+    "time": "2025-10-06T08:00:00Z"
+  },
+  {
+    "id": "a3",
+    "title": "Strong winds expected",
+    "severity": "low",
+    "description": "Gusts up to 40 km/h after sunset.",
+    "location": "Dammam",
+    "time": "2025-10-07T19:00:00Z"
+  }
+]
+
+
