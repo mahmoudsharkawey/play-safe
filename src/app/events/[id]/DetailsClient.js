@@ -13,6 +13,7 @@ import {
   MatchDetailsCard,
   VenueMapSection,
   WeatherCard,
+  HistoricalWeatherCard,
   AITipsCard,
   NASAAlertsCard
 } from "@/components/events";
@@ -56,8 +57,9 @@ export default function DetailsClient({ id }) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column - Main Content */}
         <div className="lg:col-span-2 space-y-6">
-          <MatchDetailsCard fixture={fixture} />
+          <AITipsCard tipsState={tipsState} />
           <VenueMapSection coords={coords} venueName={venueName} city={city} />
+          <MatchDetailsCard fixture={fixture} />
         </div>
 
         {/* Right Column - Sidebar */}
@@ -70,7 +72,11 @@ export default function DetailsClient({ id }) {
             venueName={venueName}
             city={city}
           />
-          <AITipsCard tipsState={tipsState} />
+          <HistoricalWeatherCard 
+            coords={coords}
+            city={city}
+            venueName={venueName}
+          />
           <NASAAlertsCard 
             coords={coords}
             alertsLoading={alertsLoading}

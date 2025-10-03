@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Home, CalendarDays, Bell, Info } from "lucide-react";
+import { Menu, X, Home, CalendarDays, LineChart, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
@@ -23,8 +23,8 @@ export default function Navbar() {
             <Link href="/events" className="inline-flex items-center gap-1.5 hover:underline underline-offset-4">
               <CalendarDays className="h-4 w-4" /> Events
             </Link>
-            <Link href="/alerts" className="inline-flex items-center gap-1.5 hover:underline underline-offset-4">
-              <Bell className="h-4 w-4" /> Alerts
+            <Link href="/insights" className="inline-flex items-center gap-1.5 hover:underline underline-offset-4">
+              <LineChart className="h-4 w-4" /> Insights
             </Link>
             <Link href="/about" className="inline-flex items-center gap-1.5 hover:underline underline-offset-4">
               <Info className="h-4 w-4" /> About
@@ -54,8 +54,8 @@ export default function Navbar() {
             <Link href="/events" className="inline-flex items-center gap-2" onClick={() => setOpen(false)}>
               <CalendarDays className="h-4 w-4" /> Events
             </Link>
-            <Link href="/alerts" className="inline-flex items-center gap-2" onClick={() => setOpen(false)}>
-              <Bell className="h-4 w-4" /> Alerts
+            <Link href="/insights" className="inline-flex items-center gap-2" onClick={() => setOpen(false)}>
+              <LineChart className="h-4 w-4" /> Insights
             </Link>
             <Link href="/about" className="inline-flex items-center gap-2" onClick={() => setOpen(false)}>
               <Info className="h-4 w-4" /> About
