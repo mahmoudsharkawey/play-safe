@@ -1,11 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/play_safe_navbar_logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,7 +13,6 @@ export default function Navbar() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            {/* <Image src={logo} alt="Play Safe" width={84} height={36} priority /> */}
             <span className="font-semibold">Play Safe</span>
           </Link>
 

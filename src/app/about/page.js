@@ -1,4 +1,4 @@
-import AboutSection from "@/components/AboutSection";
+import AboutSection from "@/components/home/AboutSection";
 
 export const metadata = { title: "About" };
 
