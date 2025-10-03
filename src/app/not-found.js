@@ -8,7 +8,7 @@ export default function NotFound() {
         <h1 className="text-6xl font-bold text-gray-300">404</h1>
         <h2 className="text-2xl font-semibold text-gray-400">Page Not Found</h2>
         <p className="text-gray-500 max-w-md">
-          Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or you entered the wrong URL.
+          Sorry, we couldn&#39;t find the page you&#39;re looking for. It might have been moved, deleted, or you entered the wrong URL.
         </p>
       </div>
       
