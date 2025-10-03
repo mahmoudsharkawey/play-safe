@@ -1,7 +1,7 @@
 export function Card({ className = "", ...props }) {
   return (
     <div
-      className={`rounded-lg border bg-card text-card-foreground shadow ${className}`}
+      className={`rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-md hover:border-foreground/20 ${className}`}
       {...props}
     />
   );

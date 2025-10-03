@@ -19,6 +19,8 @@
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-chartjs-2": "^5.2.0",
+    "chart.js": "^4.4.7",
     "react-leaflet": "^5.0.0",
     "tailwind-merge": "^3.3.1"
   },

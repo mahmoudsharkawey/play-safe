@@ -72,18 +72,20 @@ export default function AboutSection({ variant = "compact" }) {
 
   // Compact variant
   return (
-    <section className="space-y-4">
+    <section className="space-y-5">
       <h2 className="text-xl md:text-2xl font-semibold">About Play Safe</h2>
-      <div className="space-y-3 text-muted-foreground">
-        <p>
-          SafePlay bridges space‑based data with practical, event‑oriented applications, combining predictive alerts,
-          hazard awareness, and live satellite imagery for specific venues and timeframes.
-        </p>
-        <ul className="list-disc pl-5 space-y-1">
-          <li>Improves safety with timely preventive actions.</li>
-          <li>Reduces economic losses via better contingency planning.</li>
-          <li>Delivers peace of mind through science‑backed insights.</li>
-        </ul>
+      <div className="rounded-lg border p-5 bg-gradient-to-br from-muted/40 to-transparent">
+        <div className="space-y-3 text-muted-foreground">
+          <p>
+            SafePlay bridges space‑based data with practical, event‑oriented applications, combining predictive alerts,
+            hazard awareness, and live satellite imagery for specific venues and timeframes.
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Improves safety with timely preventive actions.</li>
+            <li>Reduces economic losses via better contingency planning.</li>
+            <li>Delivers peace of mind through science‑backed insights.</li>
+          </ul>
+        </div>
       </div>
     </section>
   );

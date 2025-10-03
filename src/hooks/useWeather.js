@@ -45,6 +45,13 @@ async function fetchWeather({ latitude, longitude }, signal) {
   return await res.json();
 }
 
+async function fetchDailyForecast({ latitude, longitude }, signal) {
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max&timezone=auto`;
+  const res = await fetch(url, { signal });
+  if (!res.ok) throw new Error("Failed to fetch daily forecast");
+  return await res.json();
+}
+
 const coordsCache = new Map();
 
 export function useWeather({ venueName, city, apiKey }) {
@@ -87,6 +94,47 @@ export function useWeather({ venueName, city, apiKey }) {
     })();
     return () => ctrl.abort();
   }, [query, apiKey, city]);
+
+  return state;
+}
+
+export function useDailyForecast({ venueName, city, apiKey, coords: explicitCoords }) {
+  const [state, setState] = useState({ isLoading: false, error: null, data: null, coords: null });
+  const query = useMemo(() => {
+    const parts = [venueName, city].filter(Boolean);
+    return parts.join(", ");
+  }, [venueName, city]);
+
+  useEffect(() => {
+    const ctrl = new AbortController();
+    (async () => {
+      try {
+        if (!explicitCoords && !query) return;
+        setState((s) => ({ ...s, isLoading: true, error: null }));
+        let coords = explicitCoords || (query ? coordsCache.get(query) : null);
+        if (!coords && query) {
+          try {
+            coords = await geocode(query, apiKey, ctrl.signal);
+          } catch (e1) {
+            if (city) {
+              coords = await geocode(city, apiKey, ctrl.signal);
+            } else {
+              throw e1;
+            }
+          }
+          if (coords) coordsCache.set(query, coords);
+        }
+        if (!coords) throw new Error("Missing coordinates for forecast");
+        const data = await fetchDailyForecast(coords, ctrl.signal);
+        setState({ isLoading: false, error: null, data, coords });
+      } catch (err) {
+        if (ctrl.signal.aborted) return;
+        const message = err?.message || String(err);
+        setState({ isLoading: false, error: message, data: null, coords: null });
+      }
+    })();
+    return () => ctrl.abort();
+  }, [query, apiKey, city, explicitCoords?.latitude, explicitCoords?.longitude]);
 
   return state;
 }
